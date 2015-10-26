@@ -13,7 +13,7 @@ CollageCreator takes as its input two directories, one containing twelve landsca
 ### Example
 To create a collage from images in the directories 'Landscape' and 'Portrait', the command would be:
 
-  java -jar CollageCreator.jar Landscape Portrait
+    java -jar CollageCreator.jar Landscape Portrait
   
 Note that the name of the folder containing landscape images should be the first argument.
 

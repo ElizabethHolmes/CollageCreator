@@ -1,13 +1,22 @@
 package collagecreator;
 
-import java.lang.*;
-import java.awt.*;
-import java.awt.image.*;
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
-import javax.imageio.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Graphics2D;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import javax.imageio.ImageIO;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class CollageCreator {
     
@@ -18,7 +27,6 @@ public class CollageCreator {
     
     public static void createLandscapeLabel (String filename, JPanel panel) {
         try {
-            //Image pic = ImageIO.read(new File ("/Users/ElizabethSutton/Desktop/Photos/Landscape/"+filename));
             Image pic = ImageIO.read(new File (landscapeDirectoryName+"/"+filename));
             Image resizedpic = pic.getScaledInstance(800,600,Image.SCALE_SMOOTH);
             JLabel label = new JLabel(new ImageIcon(resizedpic));
@@ -64,8 +72,8 @@ public class CollageCreator {
         //Creating lists of files to use
         File landscapeDirectory = new File(landscapeDirectoryName);
         File portraitDirectory = new File(portraitDirectoryName);
-        ArrayList<String> portraitList = new ArrayList(Arrays.asList(portraitDirectory.list())); 
         ArrayList<String> landscapeList = new ArrayList(Arrays.asList(landscapeDirectory.list()));
+        ArrayList<String> portraitList = new ArrayList(Arrays.asList(portraitDirectory.list()));
         
         //Randomising the file order
         Collections.shuffle(portraitList);
@@ -101,6 +109,7 @@ public class CollageCreator {
         Graphics2D g2d = img.createGraphics();
         content.printAll(g2d);
         g2d.dispose();
+        
         try {
             ImageIO.write(img, "jpg", new File("collage.jpg"));
         } catch (IOException e) {

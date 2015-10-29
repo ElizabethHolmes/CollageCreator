@@ -2,8 +2,6 @@
 ## About
 CollageCreator is a Java program for creating a collage of images from a set of twelve landscape and six portrait images. The program randomises the order of photos so different collages can be obtained from the same photos by re-running the program.
 
-** PLEASE NOTE: CollageCreator is one of my first Java programs written as a beginner Java programmer and so I apologise if the code is inelegant, unconventional or otherwise sub-optimal; it works for the intended purpose and I provide it in case it might be useful to others, but with no guarantees. **
-
 ## Requirements
 CollageCreator requires a Java Runtime Environment. Images should have an aspect ratio of 4:3 in order to be displayed properly.
 
